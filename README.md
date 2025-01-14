@@ -13,4 +13,4 @@ Tech Stack i used:
 - SweetAlert2
 
 Link Website:
-https://www.eki.my.id/
+[https://www.eki.my.id/](https://raasikkk-portfolio-pwoi.vercel.app/)
