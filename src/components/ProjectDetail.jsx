@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
-  ArrowLeft, ExternalLink, Github, Code2, Star,
-  ChevronRight, Layers, Layout, Globe, Package, Cpu, Code,
+  ArrowLeft,
+  ExternalLink,
+  Github,
+  Code2,
+  Star,
+  ChevronRight,
+  Layers,
+  Layout,
+  Globe,
+  Package,
+  Cpu,
+  Code,
 } from "lucide-react";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const TECH_ICONS = {
   React: Globe,
@@ -20,7 +30,7 @@ const TECH_ICONS = {
 
 const TechBadge = ({ tech }) => {
   const Icon = TECH_ICONS[tech] || TECH_ICONS["default"];
-  
+
   return (
     <div className="group relative overflow-hidden px-3 py-2 md:px-4 md:py-2.5 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl border border-blue-500/10 hover:border-blue-500/30 transition-all duration-300 cursor-default">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-500" />
@@ -58,21 +68,33 @@ const ProjectStats = ({ project }) => {
 
       <div className="relative z-10 flex items-center space-x-2 md:space-x-3 bg-white/5 p-2 md:p-3 rounded-lg border border-blue-500/20 transition-all duration-300 hover:scale-105 hover:border-blue-500/50 hover:shadow-lg">
         <div className="bg-blue-500/20 p-1.5 md:p-2 rounded-full">
-          <Code2 className="text-blue-300 w-4 h-4 md:w-6 md:h-6" strokeWidth={1.5} />
+          <Code2
+            className="text-blue-300 w-4 h-4 md:w-6 md:h-6"
+            strokeWidth={1.5}
+          />
         </div>
         <div className="flex-grow">
-          <div className="text-lg md:text-xl font-semibold text-blue-200">{techStackCount}</div>
-          <div className="text-[10px] md:text-xs text-gray-400">Total Teknologi</div>
+          <div className="text-lg md:text-xl font-semibold text-blue-200">
+            {techStackCount}
+          </div>
+          <div className="text-[10px] md:text-xs text-gray-400">
+            Total Technology
+          </div>
         </div>
       </div>
 
       <div className="relative z-10 flex items-center space-x-2 md:space-x-3 bg-white/5 p-2 md:p-3 rounded-lg border border-purple-500/20 transition-all duration-300 hover:scale-105 hover:border-purple-500/50 hover:shadow-lg">
         <div className="bg-purple-500/20 p-1.5 md:p-2 rounded-full">
-          <Layers className="text-purple-300 w-4 h-4 md:w-6 md:h-6" strokeWidth={1.5} />
+          <Layers
+            className="text-purple-300 w-4 h-4 md:w-6 md:h-6"
+            strokeWidth={1.5}
+          />
         </div>
         <div className="flex-grow">
-          <div className="text-lg md:text-xl font-semibold text-purple-200">{featuresCount}</div>
-          <div className="text-[10px] md:text-xs text-gray-400">Fitur Utama</div>
+          <div className="text-lg md:text-xl font-semibold text-purple-200">
+            {featuresCount}
+          </div>
+          <div className="text-[10px] md:text-xs text-gray-400">Features</div>
         </div>
       </div>
     </div>
@@ -80,15 +102,15 @@ const ProjectStats = ({ project }) => {
 };
 
 const handleGithubClick = (githubLink) => {
-  if (githubLink === 'Private') {
+  if (githubLink === "Private") {
     Swal.fire({
-      icon: 'info',
-      title: 'Source Code Private',
-      text: 'Maaf, source code untuk proyek ini bersifat privat.',
-      confirmButtonText: 'Mengerti',
-      confirmButtonColor: '#3085d6',
-      background: '#030014',
-      color: '#ffffff'
+      icon: "info",
+      title: "Source Code Private",
+      text: "Maaf, source code untuk proyek ini bersifat privat.",
+      confirmButtonText: "Mengerti",
+      confirmButtonColor: "#3085d6",
+      background: "#030014",
+      color: "#ffffff",
     });
     return false;
   }
@@ -105,13 +127,13 @@ const ProjectDetails = () => {
     window.scrollTo(0, 0);
     const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
     const selectedProject = storedProjects.find((p) => String(p.id) === id);
-    
+
     if (selectedProject) {
       const enhancedProject = {
         ...selectedProject,
         Features: selectedProject.Features || [],
         TechStack: selectedProject.TechStack || [],
-        Github: selectedProject.Github || 'https://github.com/EkiZR',
+        Github: selectedProject.Github || "https://github.com/raasikkk",
       };
       setProject(enhancedProject);
     }
@@ -122,7 +144,9 @@ const ProjectDetails = () => {
       <div className="min-h-screen bg-[#030014] flex items-center justify-center">
         <div className="text-center space-y-6 animate-fadeIn">
           <div className="w-16 h-16 md:w-24 md:h-24 mx-auto border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin" />
-          <h2 className="text-xl md:text-3xl font-bold text-white">Loading Project...</h2>
+          <h2 className="text-xl md:text-3xl font-bold text-white">
+            Loading Project...
+          </h2>
         </div>
       </div>
     );
@@ -195,7 +219,9 @@ const ProjectDetails = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-purple-600/10 to-pink-600/10 hover:from-purple-600/20 hover:to-pink-600/20 text-purple-300 rounded-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
-                  onClick={(e) => !handleGithubClick(project.Github) && e.preventDefault()}
+                  onClick={(e) =>
+                    !handleGithubClick(project.Github) && e.preventDefault()
+                  }
                 >
                   <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-purple-600/10 to-pink-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
                   <Github className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
@@ -215,14 +241,15 @@ const ProjectDetails = () => {
                     ))}
                   </div>
                 ) : (
-                  <p className="text-sm md:text-base text-gray-400 opacity-50">No technologies added.</p>
+                  <p className="text-sm md:text-base text-gray-400 opacity-50">
+                    No technologies added.
+                  </p>
                 )}
               </div>
             </div>
 
             <div className="space-y-6 md:space-y-10 animate-slideInRight">
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-              
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030014] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img
                   src={project.Img}
