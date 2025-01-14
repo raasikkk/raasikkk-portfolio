@@ -1,8 +1,10 @@
-# Portfolio
-Hello!
-This is my portfolio
+# My Portfolio 
+Hello!  
+This is my portfolio showcasing my skills, certificates and projects .
 
-Tech Stack i used:
+## Tech Stack I used:
+[![My Skills](https://skillicons.dev/icons?i=react,tailwind,js,firebase,materialui,luicde)](https://skillicons.dev)
+
 - ReactJS
 - Tailwind CSS
 - AOS
@@ -12,5 +14,5 @@ Tech Stack i used:
 - Material UI
 - SweetAlert2
 
-Link Website:
+## Link to Website:
 https://raasikkk-portfolio-pwoi.vercel.app/
