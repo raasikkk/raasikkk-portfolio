@@ -134,7 +134,7 @@ const AboutPage = () => {
       localStorage.getItem("certificates") || "[]"
     );
 
-    const startDate = new Date("2021-11-06");
+    const startDate = new Date("2023-11-06");
     const today = new Date();
     const experience =
       today.getFullYear() -
